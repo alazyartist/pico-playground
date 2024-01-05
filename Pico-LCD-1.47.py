@@ -185,42 +185,44 @@ if __name__=='__main__':
     LCD.show()
     
     # LCD.fill_rect(0,0,320,30,LCD.RED)
-    LCD.write_text("Message From:",10,8,2,LCD.WHITE)
-    LCD.show()
+    # LCD.ellipse(86,43,43,43,LCD.RED,True)
+    # LCD.show()
+    # LCD.write_text("Message From:",10,8,2,LCD.WHITE)
+    # LCD.show()
     x,y = 0,0 
     # LCD.fill_rect(0,30,320,30,LCD.BLUE)
-    LCD.rect(0,20,160,20,LCD.BLUE)
-    # LCD.write_text("Dylan",10,38,2,LCD.WHITE)
-    while x < 160:
-        LCD.fill_rect(0,20,320,30,LCD.BLUE)
-        x += 1
-        LCD.write_text("Dylan",x,28,2,LCD.WHITE)
-        LCD.show()
-        time.sleep(0.01)
+    # LCD.write_text("Dylan",x,28,2,LCD.WHITE)
+  
+    LCD.write_text("Dylan",10,38,2,LCD.WHITE)
+#     while x < 160:
+#         LCD.fill_rect(0,20,320,30,LCD.BLUE)
+#         x += 1
+        # LCD.write_text("Dylan",x,28,2,LCD.WHITE)
+    LCD.show()
+#         time.sleep(0.01)
 
-    # LCD.fill_rect(0,60,320,30,LCD.GREEN)
-#     LCD.rect(0,40,160,20,LCD.GREEN)
-    mx,my = 320,0
-    while mx > 0:
-        LCD.fill_rect(0,40,320,30,0x0000)
-        mx -= 1
-        LCD.write_text("Thanks,Mom. Youre The Best!",mx,68,2,LCD.BLUE)
-        LCD.show()
-        time.sleep(0.01)
+#     # LCD.fill_rect(0,60,320,30,LCD.GREEN)
+# #     LCD.rect(0,40,160,20,LCD.GREEN)
+#     mx,my = 320,0
+#     while mx > 0:
+#         LCD.fill_rect(0,40,320,30,0x000000)
+#         mx -= 1
+#         LCD.write_text("Thanks,Mom",mx,68,2,LCD.WHITE)
+#         LCD.show()
+#         time.sleep(0.01)
     
     # LCD.fill_rect(0,90,320,30,0X07FF)
     # LCD.fill_rect(0,120,320,60,0xF81F)
     # LCD.fill_rect(0,150,320,30,0xFF1F)
     
-    LCD.show()
 
 #framebufer
-    
-    # buffer = bytearray
+    byte_data = bytearray(b"\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00|?\x00\x01\x86@\x80\x01\x01\x80\x80\x01\x11\x88\x80\x01\x05\xa0\x80\x00\x83\xc1\x00\x00C\xe3\x00\x00~\xfc\x00\x00L'\x00\x00\x9c\x11\x00\x00\xbf\xfd\x00\x00\xe1\x87\x00\x01\xc1\x83\x80\x02A\x82@\x02A\x82@\x02\xc1\xc2@\x02\xf6>\xc0\x01\xfc=\x80\x01\x18\x18\x80\x01\x88\x10\x80\x00\x8c!\x00\x00\x87\xf1\x00\x00\x7f\xf6\x00\x008\x1c\x00\x00\x0c \x00\x00\x03\xc0\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00")
 
-    # fb = framebuf.FrameBuffer(buffer, 320, 172, framebuf.RGB565)
+    fb = framebuf.FrameBuffer(byte_data, 20, 20, framebuf.RGB565)
 
-    # LCD.blit(fb,0,0)
+    LCD.blit(fb,50,30)
+    LCD.show()
   # Screen dimensions
     # WIDTH = 320
     # HEIGHT = 172
